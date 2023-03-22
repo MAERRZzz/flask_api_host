@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Description" content="Bootstrap Responsive Admin Web Dashboard HTML5 Template">
+    <meta name="Author" content="Spruko Technologies Private Limited">
+    <meta name="Keywords"
+          content="admin,admin dashboard,admin dashboard template,admin panel template,admin template,admin theme,bootstrap 4 admin template,bootstrap 4 dashboard,bootstrap admin,bootstrap admin dashboard,bootstrap admin panel,bootstrap admin template,bootstrap admin theme,bootstrap dashboard,bootstrap form template,bootstrap panel,bootstrap ui kit,dashboard bootstrap 4,dashboard design,dashboard html,dashboard template,dashboard ui kit,envato templates,flat ui,html,html and css templates,html dashboard template,html5,jquery html,premium,premium quality,sidebar bootstrap 4,template admin bootstrap 4"/>
+
+    <!-- Title -->
+    <title> Valex - Premium dashboard ui bootstrap rwd admin html5 template </title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/brand/favicon.png') }}">
+
+    <!-- Icons css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/icons.css') }}">
+
+    <!--  Custom Scroll bar-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/mscrollbar/jquery.mCustomScrollbar.css') }}">
+
+    <!--  Sidebar css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/sidebar/sidebar.css') }}">
+
+    <!--- Internal Morris css-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/morris.js/morris.css') }}">
+
+    <!--- Style css --->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!--- Dark-mode css --->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style-dark.css') }}">
+
+    <!---Skinmodes css-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/skin-modes.css') }}">
+
+    {{ turbo() }}
+
+    <style>
+        .alert-error {
+            background-color: red;
+            color: #3c763d;
+        }
+    </style>
+</head>
+
+<body class="main-body dark-theme">
+
+<!-- Loader -->
+<div id="global-loader">
+    <img src="{{ url_for('static', filename='img/loader.svg') }}" class="loader-img" alt="Loader">
+
+</div>
+<!-- /Loader -->
+
+<!-- Page -->
+<div class="page">
+
+    <!-- main-header opened -->
+    <div class="main-header nav nav-item hor-header">
+        <div class="container">
+            <div class="main-header-left">
+                <a class="animated-arrow hor-toggle horizontal-navtoggle"><span></span></a><!-- sidebar-toggle-->
+                <a class="header-brand" href="index.html">
+                    <img src="{{ url_for('static', filename='img/brand/logo-white.png') }}" class="desktop-dark" tal="">
+                    <img src="{{ url_for('static', filename='img/brand/logo.png') }}" class="desktop-logo">
+                    <img src="{{ url_for('static', filename='img/brand/favicon.png') }}" class="desktop-logo-1">
+                    <img src="{{ url_for('static', filename='img/brand/favicon-white.png') }}"
+                         class="desktop-logo-dark">
+                </a>
+                {#                <div class="main-header-center  ml-4">#}
+                {#                    <input class="form-control" placeholder="Search for anything..." type="search">#}
+                {#                    <button class="btn"><i class="fe fe-search"></i></button>#}
+                {#                </div>#}
+            </div><!-- search -->
+            <div class="main-header-right">
+
+                <div class="nav nav-item  navbar-nav-right ml-auto">
+
+
+                    <div class="dropdown main-profile-menu nav nav-item nav-link">
+                        <a class="profile-user d-flex" href=""><img alt="" src="../../assets/img/faces/6.jpg"></a>
+                        <div class="dropdown-menu">
+                            <div class="main-header-profile bg-primary p-3">
+                                <div class="d-flex wd-100p">
+                                    <div class="main-img-user"><img alt="" src="../../assets/img/faces/6.jpg" class="">
+                                    </div>
+                                    <div class="ml-3 my-auto">
+                                        <h6>Petey Cruiser</h6><span>Premium Member</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="dropdown-item" href=""><i class="bx bx-user-circle"></i>Profile</a>
+                            <a class="dropdown-item" href=""><i class="bx bx-cog"></i> Edit Profile</a>
+                            <a class="dropdown-item" href=""><i class="bx bxs-inbox"></i>Inbox</a>
+                            <a class="dropdown-item" href=""><i class="bx bx-envelope"></i>Messages</a>
+                            <a class="dropdown-item" href=""><i class="bx bx-slider-alt"></i> Account Settings</a>
+                            <a class="dropdown-item" href="page-signin.html"><i class="bx bx-log-out"></i> Sign Out</a>
+                        </div>
+                    </div>
+                    {#                    <div class="dropdown main-header-message right-toggle">#}
+                    {#                        <a class="nav-link pr-0" data-toggle="sidebar-right" data-target=".sidebar-right">#}
+                    {#                            <svg xmlns="http://www.w3.org/2000/svg" class="header-icon-svgs" viewBox="0 0 24 24"#}
+                    {#                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"#}
+                    {#                                 stroke-linejoin="round">#}
+                    {#                                <line x1="3" y1="12" x2="21" y2="12"></line>#}
+                    {#                                <line x1="3" y1="6" x2="21" y2="6"></line>#}
+                    {#                                <line x1="3" y1="18" x2="21" y2="18"></line>#}
+                    {#                            </svg>#}
+                    {#                        </a>#}
+                    {#                    </div>#}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /main-header -->
+    <!-- main-content opened -->
+    <div class="main-content horizontal-content">
+        <turbo-frame id="all">
+
+            <!-- container opened -->
+            <div class="container">
+
+                <!-- breadcrumb -->
+                <div class="breadcrumb-header justify-content-between">
+                    <div class="left-content">
+                        <div>
+                            <h2 class="main-content-title tx-24 mg-b-1 mg-b-lg-1">Посещаемость</h2>
+                        </div>
+                    </div>
+                </div>
+                <!-- /breadcrumb -->
+
+                <!-- row opened -->
+                <div class="row row-sm">
+                    <div class="col-md-12 col-lg-4 col-xl-4">
+                        <div class="card card-dashboard-eight pb-2">
+                            <h6 class="card-title">Сортировка</h6>
+                            <form method="GET">
+                                <div class="form-group">
+                                    <span class="d-block mg-b-10 text-muted tx-12">Дата:</span>
+                                    <input type="date" class="form-control" id="exampleInputEmail1" name="date"
+                                           aria-describedby="emailHelp" value="{{ request.args.get('date') }}"
+                                           placeholder="Enter email" required>
+                                </div>
+                                <div class="form-group">
+                                    <span class="d-block mg-b-10 text-muted tx-12">Дисциплина:</span>
+                                    <select class="form-control" id="exampleFormControlSelect1" name="event_id">
+                                        {% for event, class in teacher_lessons %}
+                                            {% if event.id|string == request.args.get('event_id') %}
+                                                <option value="{{ event.id }}" selected> {{ class.name }}
+                                                    | {{ event.start[24:29] }}</option>
+                                            {% else %}
+                                                <option value="{{ event.id }}"> {{ class.name }}
+                                                    | {{ event.start[24:29] }}</option>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <p></p>
+                                <button type="submit" class="btn btn-primary w-100">Найти</button>
+                                <p></p>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-8 col-xl-8">
+                        <div class="card card-table-two">
+                            <div class="d-flex justify-content-between">
+                                <h4 class="card-title mb-1">Список студентов</h4>
+                            </div>
+                            <p></p>
+
+                            {% include '_sorting.html' %}
+
+                            <div class="table-responsive country-table">
+                                <table class="table table-striped table-bordered
+									mb-0 text-sm-nowrap text-lg-nowrap text-xl-nowrap table_sort">
+                                    <thead>
+                                    <tr>
+                                        <th class="wd-lg-25p">ФИО</th>
+                                        <th class="wd-lg-25p tx-right">Время сканирования</th>
+                                    </tr>
+                                    </thead>
+
+                                    <tbody>
+                                    {% include '_table.html' %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /row -->
+            </div>
+        </turbo-frame>
+    </div>
+    <!-- Container closed -->
+
+    <!-- Footer opened -->
+    <div class="main-footer ht-40">
+        <div class="container-fluid pd-t-0-f ht-100p">
+            <span>Copyright © 2023 <a href="#">CEPUqr</a>. Designed by </span>
+        </div>
+    </div>
+    <!-- Footer closed -->
+
+</div>
+<!-- End Page -->
+
+<!-- Back-to-top -->
+<a href="#top" id="back-to-top"><i class="las la-angle-double-up"></i></a>
+
+<!-- JQuery min js -->
+<script src="{{ url_for('static', filename='plugins/jquery/jquery.min.js') }}"></script>
+<!-- Bootstrap Bundle js -->
+<script src="{{ url_for('static', filename='plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+<!-- Ionicons js -->
+<script src="{{ url_for('static', filename='plugins/ionicons/ionicons.js') }}"></script>
+
+<!-- Moment js -->
+<script src="{{ url_for('static', filename='plugins/moment/moment.js') }}"></script>
+
+<!--Internal Sparkline js -->
+<script src="{{ url_for('static', filename='plugins/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
+
+<!-- Moment js -->
+<script src="{{ url_for('static', filename='plugins/raphael/raphael.min.js') }}"></script>
+
+
+<!-- Internal Piety js -->
+<script src="{{ url_for('static', filename='plugins/peity/jquery.peity.min.js') }}"></script>
+
+
+<!--Internal  Flot js-->
+<script src="{{ url_for('static', filename='plugins/jquery.flot/jquery.flot.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/jquery.flot/jquery.flot.pie.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/jquery.flot/jquery.flot.resize.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/jquery.flot/jquery.flot.categories.js') }}"></script>
+<script src="{{ url_for('static', filename='js/dashboard.sampledata.js') }}"></script>
+<script src="{{ url_for('static', filename='js/chart.flot.sampledata.js') }}"></script>
+
+<!-- Rating js-->
+<script src="{{ url_for('static', filename='plugins/rating/jquery.rating-stars.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/rating/jquery.barrating.js') }}"></script>
+
+<!-- P-scroll js -->
+<script src="{{ url_for('static', filename='plugins/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/perfect-scrollbar/p-scroll.js') }}"></script>
+
+<!-- Horizontalmenu js-->
+<script src="{{ url_for('static', filename='plugins/sidebar/sidebar.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/sidebar/sidebar-custom.js') }}"></script>
+
+<!-- Eva-icons js -->
+<script src="{{ url_for('static', filename='js/eva-icons.min.js') }}"></script>
+
+<!--Internal Apexchart js-->
+<script src="{{ url_for('static', filename='js/apexcharts.js') }}"></script>
+
+<!-- Horizontalmenu js-->
+<script src="{{ url_for('static', filename='plugins/horizontal-menu/horizontal-menu-2/horizontal-menu.js') }}"></script>
+
+<!-- Sticky js -->
+<script src="{{ url_for('static', filename='js/sticky.js') }}"></script>
+
+<!-- Internal Map -->
+<script src="{{ url_for('static', filename='plugins/jqvmap/jquery.vmap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/jqvmap/maps/jquery.vmap.usa.js') }}"></script>
+
+<!-- Internal Chart js -->
+<script src="{{ url_for('static', filename='plugins/chart.js/Chart.bundle.min.js') }}"></script>
+
+<!--Internal  index js -->
+<script src="{{ url_for('static', filename='js/index-dark.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.vmap.sampledata.js') }}"></script>
+
+<!-- custom js -->
+<script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.vmap.sampledata.js') }}"></script>
+
+</body>
+</html>
